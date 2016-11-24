@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Bind Widget
-        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView = (ImageView) findViewById(R.id.imageView3);
 
         //Image Controller ทำให้ปุ่มสามารถคลิกได้
         imageView.setOnClickListener(new View.OnClickListener() {
