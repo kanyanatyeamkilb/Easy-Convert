@@ -2,6 +2,7 @@ package rtc.kanyanat.chetsada.easyconvert;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -18,7 +19,7 @@ public class Calculate extends AppCompatActivity {
     private ListView listView;
     private int indexAnInt;
     private String[] titleStrings, lengthStrings, tempStrings, areaStrings,
-            volumeStrings, weightStrings, timeStrings;
+            volumeStrings, weightStrings, timeStrings, spinnerStrings;
 
 
     @Override
@@ -57,8 +58,8 @@ public class Calculate extends AppCompatActivity {
 
         tempStrings = new String[3];
         tempStrings[0] = "องศา C";
-        tempStrings[2] = "องศา F";
-        tempStrings[3] = "องศา K";
+        tempStrings[1] = "องศา F";
+        tempStrings[2] = "องศา K";
 
         areaStrings = new String[7];
         areaStrings[0] = "ตร.ม.";
@@ -93,6 +94,34 @@ public class Calculate extends AppCompatActivity {
         timeStrings[4] = "สัปดาห์";
         timeStrings[5] = "เดือน";
         timeStrings[6] = "ปี";
+
+        // create spinner
+        switch (indexAnInt) {
+            case 0:
+                spinnerStrings = lengthStrings;
+                break;
+            case 1:
+                spinnerStrings = tempStrings;
+                break;
+            case 2:
+                spinnerStrings = areaStrings;
+                break;
+            case 3:
+                spinnerStrings = volumeStrings;
+                break;
+            case 4:
+                spinnerStrings = weightStrings;
+                break;
+            case 5:
+                spinnerStrings = timeStrings;
+                break;
+
+
+        }   //switch
+
+        ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(Calculate.this,
+                android.R.layout.simple_list_item_1,spinnerStrings);
+        spinner.setAdapter(stringArrayAdapter);
 
 
     }   // main method
