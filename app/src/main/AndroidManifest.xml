@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ConvertAActivity" />
-        <activity android:name=".Main2Bctivity"></activity>
+        <activity android:name=".Main2Bctivity" />
+        <activity android:name=".Calculate"></activity>
     </application>
 
 </manifest>
