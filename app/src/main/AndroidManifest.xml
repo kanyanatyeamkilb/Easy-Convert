@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ConvertAActivity"></activity>
+        <activity android:name=".ConvertAActivity" />
+        <activity android:name=".Main2Bctivity"></activity>
     </application>
 
 </manifest>
