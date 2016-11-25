@@ -12,20 +12,10 @@
     tools:context="rtc.kanyanat.chetsada.easyconvert.MainActivity"
     android:background="@drawable/bk3">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/titleMain"
-        android:textSize="30sp"
-        android:textStyle="normal|bold"
-        android:textColor="#704615"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/text" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/length1"
+        app:srcCompat="@drawable/length2"
         android:id="@+id/imageView3"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/text" />
@@ -33,7 +23,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/temperature1"
+        app:srcCompat="@drawable/temperature3"
         android:id="@+id/imageView4"
         android:layout_below="@+id/imageView3"
         android:layout_centerHorizontal="true" />
@@ -41,7 +31,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/area1"
+        app:srcCompat="@drawable/area4"
         android:id="@+id/imageView5"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/imageView4" />
@@ -49,15 +39,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/volume1"
-        android:id="@+id/imageView6"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView5" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/weight1"
+        app:srcCompat="@drawable/weight2"
         android:id="@+id/imageView7"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/imageView6" />
@@ -65,10 +47,30 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/time1"
+        app:srcCompat="@drawable/time2"
         android:id="@+id/imageView8"
         android:layout_below="@+id/imageView7"
         android:layout_alignLeft="@+id/imageView7"
         android:layout_alignStart="@+id/imageView7" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/volume2"
+        android:id="@+id/imageView6"
+        android:layout_below="@+id/imageView5"
+        android:layout_alignLeft="@+id/imageView5"
+        android:layout_alignStart="@+id/imageView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titleMain"
+        android:textSize="30sp"
+        android:textStyle="normal|bold"
+        android:textColor="#723c1d"
+        android:id="@+id/text"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
