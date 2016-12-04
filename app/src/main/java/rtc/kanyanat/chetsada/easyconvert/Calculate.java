@@ -27,7 +27,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
     private MyConstant myConstant;
     private double rowMatADouble, baseADouble; // สิ่งที่รับจาก Edit text
     private String unitString;
-    private double[] factorDoubles;
+    private double[] factorDoubles, valueDoubles;
 
 
 
@@ -116,6 +116,9 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         button.setOnClickListener(this);
 
 
+
+
+
     }   // main method
 
     @Override
@@ -135,6 +138,15 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
             baseADouble = rowMatADouble / factorDoubles[indexSpinnerChoseAnInt];
 
             Log.d("4decV1", "base ==> " + baseADouble);
+
+            //Create Spinner
+            valueDoubles = new double[factorDoubles.length];
+            for (int i=0;i<factorDoubles.length;i++) {
+                valueDoubles[i] = factorDoubles[i] * baseADouble;
+            }
+
+            MyAdapter myAdapter = new MyAdapter(Calculate.this, valueDoubles, spinnerStrings);
+            listView.setAdapter(myAdapter);
 
 
         }   // if
