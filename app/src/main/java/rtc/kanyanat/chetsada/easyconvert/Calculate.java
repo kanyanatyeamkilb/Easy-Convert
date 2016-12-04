@@ -1,7 +1,7 @@
 package rtc.kanyanat.chetsada.easyconvert;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,12 +20,16 @@ public class Calculate extends AppCompatActivity {
     private int indexAnInt;
     private String[] titleStrings, lengthStrings, tempStrings, areaStrings,
             volumeStrings, weightStrings, timeStrings, spinnerStrings;
+    private MyConstant myConstant;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculate);
+
+        myConstant = new MyConstant();
+        titleStrings = myConstant.getTitleStrings();
 
         //bind widget
         textView = (TextView) findViewById(R.id.textView2);
@@ -37,90 +41,38 @@ public class Calculate extends AppCompatActivity {
         // get value from intent
         indexAnInt = getIntent().getIntExtra("Index", 0);
 
-        //show text
-        titleStrings = new String[6];
-        titleStrings[0] = "Length";
-        titleStrings[1] = "Temp";
-        titleStrings[2] = "Area";
-        titleStrings[3] = "Volume";
-        titleStrings[4] = "Weight";
-        titleStrings[5] = "Time";
+
         textView.setText(titleStrings[indexAnInt]);
 
         //show spinner
-        lengthStrings = new String[6];
-        lengthStrings[0] = "มม.";
-        lengthStrings[1] = "ซม.";
-        lengthStrings[2] = "ม.";
-        lengthStrings[3] = "กม.";
-        lengthStrings[4] = "นิ้ว";
-        lengthStrings[5] = "หลา";
 
-        tempStrings = new String[3];
-        tempStrings[0] = "องศา C";
-        tempStrings[1] = "องศา F";
-        tempStrings[2] = "องศา K";
-
-        areaStrings = new String[7];
-        areaStrings[0] = "ตร.ม.";
-        areaStrings[1] = "ตร.กม.";
-        areaStrings[2] = "ตร.ซม.";
-        areaStrings[3] = "ตร.มม.";
-        areaStrings[4] = "ตร.ไมล์";
-        areaStrings[5] = "ตร.ฟุต";
-        areaStrings[6] = "ตร.นิ้ว";
-
-        volumeStrings = new String[6];
-        volumeStrings[0] = "ลบ.ม.";
-        volumeStrings[1] = "ลบ.กม.";
-        volumeStrings[2] = "ลบ.ซม.";
-        volumeStrings[3] = "ลบ.มม.";
-        volumeStrings[4] = "ล.";
-        volumeStrings[5] = "มล.";
-
-        weightStrings = new String[6];
-        weightStrings[0] = "กก.";
-        weightStrings[1] = "ก.";
-        weightStrings[2] = "มก.";
-        weightStrings[3] = "ตัน";
-        weightStrings[4] = "ปอนด์";
-        weightStrings[5] = "ออนซ์";
-
-        timeStrings = new String[7];
-        timeStrings[0] = "วินาที";
-        timeStrings[1] = "นาที";
-        timeStrings[2] = "ชั่วโมง";
-        timeStrings[3] = "วัน";
-        timeStrings[4] = "สัปดาห์";
-        timeStrings[5] = "เดือน";
-        timeStrings[6] = "ปี";
 
         // create spinner
         switch (indexAnInt) {
             case 0:
-                spinnerStrings = lengthStrings;
+                spinnerStrings = myConstant.getLengthStrings();
                 break;
             case 1:
-                spinnerStrings = tempStrings;
+                spinnerStrings = myConstant.getTempStrings();
                 break;
             case 2:
-                spinnerStrings = areaStrings;
+                spinnerStrings = myConstant.getAreaStrings();
                 break;
             case 3:
-                spinnerStrings = volumeStrings;
+                spinnerStrings = myConstant.getVolumeStrings();
                 break;
             case 4:
-                spinnerStrings = weightStrings;
+                spinnerStrings = myConstant.getWeightStrings();
                 break;
             case 5:
-                spinnerStrings = timeStrings;
+                spinnerStrings = myConstant.getTimeStrings();
                 break;
 
 
         }   //switch
 
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<String>(Calculate.this,
-                android.R.layout.simple_list_item_1,spinnerStrings);
+                android.R.layout.simple_list_item_1, spinnerStrings);
         spinner.setAdapter(stringArrayAdapter);
 
 
