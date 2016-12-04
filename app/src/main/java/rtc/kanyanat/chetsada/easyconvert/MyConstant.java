@@ -76,7 +76,7 @@ public class MyConstant {
 
         tempDoubles = new double[3];
         tempDoubles[0] = 1;
-        tempDoubles[1] = 33.8;
+        tempDoubles[1] = 1.8000;
         tempDoubles[2] = 274.15;
 
         return tempDoubles;
@@ -193,27 +193,24 @@ public class MyConstant {
 
     public String[] getTimeStrings() {
 
-        timeStrings = new String[7];
+        timeStrings = new String[5];
         timeStrings[0] = "วินาที";
         timeStrings[1] = "นาที";
         timeStrings[2] = "ชั่วโมง";
         timeStrings[3] = "วัน";
         timeStrings[4] = "สัปดาห์";
-        timeStrings[5] = "เดือน";
-        timeStrings[6] = "ปี";
+
 
         return timeStrings;
     }
 
     public double[] getTimeDoubles() {
-        timeDoubles = new double[7];
+        timeDoubles = new double[5];
         timeDoubles[0] = 86400.00;
         timeDoubles[1] = 1440;
         timeDoubles[2] = 24;
         timeDoubles[3] = 1;
         timeDoubles[4] = 0.142857143;
-        timeDoubles[5] = 0.0328549112;
-        timeDoubles[6] = 0.00273790926;
 
         return timeDoubles;
     }
