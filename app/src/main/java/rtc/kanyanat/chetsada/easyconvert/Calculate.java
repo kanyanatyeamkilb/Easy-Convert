@@ -2,14 +2,17 @@ package rtc.kanyanat.chetsada.easyconvert;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class Calculate extends AppCompatActivity {
+public class Calculate extends AppCompatActivity implements View.OnClickListener {
 
     // Explicit
     private TextView textView;
@@ -21,6 +24,10 @@ public class Calculate extends AppCompatActivity {
     private String[] titleStrings, lengthStrings, tempStrings, areaStrings,
             volumeStrings, weightStrings, timeStrings, spinnerStrings;
     private MyConstant myConstant;
+    private double[] factorDoubles;
+    private double rowMatADouble; // สิ่งที่รับจาก Edit text
+
+
 
 
     @Override
@@ -47,7 +54,7 @@ public class Calculate extends AppCompatActivity {
         //show spinner
 
 
-        // create spinner
+        //การกำหนดค่า Array ใหั Spinner , Factor
         switch (indexAnInt) {
             case 0:
                 spinnerStrings = myConstant.getLengthStrings();
@@ -76,5 +83,30 @@ public class Calculate extends AppCompatActivity {
         spinner.setAdapter(stringArrayAdapter);
 
 
+        //Button Controller
+        button.setOnClickListener(this);
+
+
     }   // main method
+
+    @Override
+    public void onClick(View view) {
+
+        String s = null;
+        s = editText.getText().toString().trim();
+
+        if (s.equals("")) {
+            Toast.makeText(Calculate.this, "Please Fill in Blank", Toast.LENGTH_SHORT).show();
+        } else {
+            //No Space
+
+            rowMatADouble = Double.parseDouble(s);
+            Log.d("4decV1", "rowMat ==> " + rowMatADouble);
+
+        }   // if
+
+
+
+    }   // onClick
+
 }   // main class
