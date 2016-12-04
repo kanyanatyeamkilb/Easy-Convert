@@ -84,7 +84,7 @@ public class MyConstant {
 
     public String[] getAreaStrings() {
 
-        areaStrings = new String[10];
+        areaStrings = new String[12];
         areaStrings[0] = "ตร.ม.";
         areaStrings[1] = "ตร.กม.";
         areaStrings[2] = "ตร.ซม.";
