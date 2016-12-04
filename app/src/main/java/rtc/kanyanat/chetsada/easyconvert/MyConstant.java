@@ -9,7 +9,8 @@ public class MyConstant {
     private String[] titleStrings, lengthStrings, tempStrings,
             areaStrings, volumeStrings, weightStrings, timeStrings;
 
-    private double[] lengthDoubles;
+    private double[] lengthDoubles, tempDoubles,
+            areaDoubles, volumeDoubles, weightDoubles, timeDoubles;
 
     public String[] getTitleStrings() {
 
@@ -62,6 +63,16 @@ public class MyConstant {
         return tempStrings;
     }
 
+    public double[] getTempDoubles() {
+
+        tempDoubles = new double[3];
+        tempDoubles[0] = 1;
+        tempDoubles[1] = 33.8;
+        tempDoubles[2] = 274.15;
+
+        return tempDoubles;
+    }
+
     public String[] getAreaStrings() {
 
         areaStrings = new String[7];
@@ -76,17 +87,44 @@ public class MyConstant {
         return areaStrings;
     }
 
+    public double[] getAreaDoubles() {
+
+        areaDoubles = new double[7];
+        areaDoubles[0] = 1;
+        areaDoubles[1] = 0.000001000000;
+        areaDoubles[2] = 10000.00;
+        areaDoubles[3] = 1000000;
+        areaDoubles[4] = 3.861022;
+        areaDoubles[5] = 10.76391;
+        areaDoubles[6] = 1550;
+
+        return areaDoubles;
+    }
+
     public String[] getVolumeStrings() {
 
         volumeStrings = new String[6];
         volumeStrings[0] = "ลบ.ม.";
         volumeStrings[1] = "ลบ.กม.";
-        volumeStrings[2] = "ลบ.ซม.";
+        volumeStrings[2] = "ลบ.ซล.";
         volumeStrings[3] = "ลบ.มม.";
         volumeStrings[4] = "ล.";
         volumeStrings[5] = "มล.";
 
         return volumeStrings;
+    }
+
+    public double[] getVolumeDoubles() {
+
+        volumeDoubles = new double[6];
+        volumeDoubles[0] = 1;
+        volumeDoubles[1] = 1.000000;
+        volumeDoubles[2] = 100000.0;
+        volumeDoubles[3] = 1.000000;
+        volumeDoubles[4] = 1000.000;
+        volumeDoubles[5] = 100000;
+
+        return volumeDoubles;
     }
 
     public String[] getWeightStrings() {
@@ -102,6 +140,19 @@ public class MyConstant {
         return weightStrings;
     }
 
+    public double[] getWeightDoubles() {
+
+        weightDoubles = new double[6];
+        weightDoubles[0] = 1;
+        weightDoubles[1] = 1000.000;
+        weightDoubles[2] = 1000000;
+        weightDoubles[3] = 0.00110231131;
+        weightDoubles[4] = 2.20462262;
+        weightDoubles[5] = 35.27396;
+
+        return weightDoubles;
+    }
+
     public String[] getTimeStrings() {
 
         timeStrings = new String[7];
@@ -114,5 +165,18 @@ public class MyConstant {
         timeStrings[6] = "ปี";
 
         return timeStrings;
+    }
+
+    public double[] getTimeDoubles() {
+        timeDoubles = new double[7];
+        timeDoubles[0] = 86400.00;
+        timeDoubles[1] = 1440;
+        timeDoubles[2] = 24;
+        timeDoubles[3] = 1;
+        timeDoubles[4] = 0.142857143;
+        timeDoubles[5] = 0.0328549112;
+        timeDoubles[6] = 0.00273790926;
+
+        return timeDoubles;
     }
 }   // Class
