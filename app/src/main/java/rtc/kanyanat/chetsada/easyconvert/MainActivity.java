@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }//switch
 
         Intent intent = new Intent(MainActivity.this,Calculate.class);
-        intent.putExtra("Index", index);
+        intent.putExtra("Index", index); //Sent Index
         startActivity(intent);
 
     }   // onclick
