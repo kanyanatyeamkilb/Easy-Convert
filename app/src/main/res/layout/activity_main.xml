@@ -18,7 +18,8 @@
         app:srcCompat="@drawable/length2"
         android:id="@+id/imageView3"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/text" />
+        android:layout_below="@+id/text"
+        android:layout_marginTop="10dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -26,7 +27,8 @@
         app:srcCompat="@drawable/temperature3"
         android:id="@+id/imageView4"
         android:layout_below="@+id/imageView3"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -34,7 +36,8 @@
         app:srcCompat="@drawable/area4"
         android:id="@+id/imageView5"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView4" />
+        android:layout_below="@+id/imageView4"
+        android:layout_marginTop="10dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -42,7 +45,8 @@
         app:srcCompat="@drawable/weight2"
         android:id="@+id/imageView7"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView6" />
+        android:layout_below="@+id/imageView6"
+        android:layout_marginTop="10dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -51,7 +55,8 @@
         android:id="@+id/imageView8"
         android:layout_below="@+id/imageView7"
         android:layout_alignLeft="@+id/imageView7"
-        android:layout_alignStart="@+id/imageView7" />
+        android:layout_alignStart="@+id/imageView7"
+        android:layout_marginTop="10dp" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -60,7 +65,8 @@
         android:id="@+id/imageView6"
         android:layout_below="@+id/imageView5"
         android:layout_alignLeft="@+id/imageView5"
-        android:layout_alignStart="@+id/imageView5" />
+        android:layout_alignStart="@+id/imageView5"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
