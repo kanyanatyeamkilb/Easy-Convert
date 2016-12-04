@@ -9,6 +9,8 @@ public class MyConstant {
     private String[] titleStrings, lengthStrings, tempStrings,
             areaStrings, volumeStrings, weightStrings, timeStrings;
 
+    private double[] lengthDoubles;
+
     public String[] getTitleStrings() {
 
         //show text
@@ -34,6 +36,20 @@ public class MyConstant {
         lengthStrings[5] = "หลา";
 
         return lengthStrings;
+    }
+
+    public double[] getLengthDoubles() {
+
+        lengthDoubles = new double[6];
+        lengthDoubles[0] = 1000;
+        lengthDoubles[1] = 100;
+        lengthDoubles[2] = 1;
+        lengthDoubles[3] = 0.001;
+        lengthDoubles[4] = 39.3433;
+        lengthDoubles[5] = 1.0936;
+
+
+        return lengthDoubles;
     }
 
     public String[] getTempStrings() {
