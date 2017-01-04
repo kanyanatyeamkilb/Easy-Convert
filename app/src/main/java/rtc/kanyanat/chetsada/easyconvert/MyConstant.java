@@ -67,7 +67,7 @@ public class MyConstant {
         tempStrings = new String[3];
         tempStrings[0] = "องศา C";
         tempStrings[1] = "องศา F";
-        tempStrings[2] = "องศา K";
+
 
         return tempStrings;
     }
@@ -77,7 +77,7 @@ public class MyConstant {
         tempDoubles = new double[3];
         tempDoubles[0] = 1;
         tempDoubles[1] = 1.8000;
-        tempDoubles[2] = 274.15;
+
 
         return tempDoubles;
     }

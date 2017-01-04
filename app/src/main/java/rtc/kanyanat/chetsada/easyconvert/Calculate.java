@@ -65,7 +65,8 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
                 break;
             case 1:
                 spinnerStrings = myConstant.getTempStrings();
-                factorDoubles = myConstant.getTempDoubles();
+                //factorDoubles = myConstant.getTempDoubles();    // แก้ไข สูตร C/100 = (F-32)/180
+                factorDoubles = myTempCalculate();
                 break;
             case 2:
                 spinnerStrings = myConstant.getAreaStrings();
@@ -121,6 +122,22 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
     }   // main method
 
+    private double[] myTempCalculate() {
+
+        double[] result = new double[2];
+
+        try {
+
+            result[0] = 1;
+            result[1] = ((9 / 5) * Double.parseDouble(editText.getText().toString())) + 32;
+
+        } catch (Exception e) {
+            result = myConstant.getTempDoubles();
+        }
+
+        return result;
+    }
+
     @Override
     public void onClick(View view) {
 
@@ -135,14 +152,24 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
             rowMatADouble = Double.parseDouble(s);
             Log.d("4decV1", "rowMat ==> " + rowMatADouble + " " + unitString);
 
-            baseADouble = rowMatADouble / factorDoubles[indexSpinnerChoseAnInt];
 
-            Log.d("4decV1", "base ==> " + baseADouble);
 
             //Create Spinner
-            valueDoubles = new double[factorDoubles.length];
-            for (int i=0;i<factorDoubles.length;i++) {
-                valueDoubles[i] = factorDoubles[i] * baseADouble;
+            if (indexAnInt == 1) {
+                //Temp
+                valueDoubles = new double[2];
+                valueDoubles[0] =  rowMatADouble;
+                valueDoubles[1] = ((1.8) * rowMatADouble) + 32;
+            } else {
+
+                baseADouble = rowMatADouble / factorDoubles[indexSpinnerChoseAnInt];
+
+                Log.d("4decV1", "base ==> " + baseADouble);
+
+                valueDoubles = new double[factorDoubles.length];
+                for (int i=0;i<factorDoubles.length;i++) {
+                    valueDoubles[i] = factorDoubles[i] * baseADouble;
+                }
             }
 
             MyAdapter myAdapter = new MyAdapter(Calculate.this, valueDoubles, spinnerStrings);
