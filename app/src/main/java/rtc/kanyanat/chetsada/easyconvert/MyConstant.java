@@ -64,7 +64,7 @@ public class MyConstant {
 
     public String[] getTempStrings() {
 
-        tempStrings = new String[3];
+        tempStrings = new String[2];
         tempStrings[0] = "องศา C";
         tempStrings[1] = "องศา F";
 
