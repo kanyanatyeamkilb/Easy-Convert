@@ -28,6 +28,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
     private double rowMatADouble, baseADouble; // สิ่งที่รับจาก Edit text
     private String unitString;
     private double[] factorDoubles, valueDoubles;
+    private int tempAnInt = 0;
 
 
 
@@ -99,6 +100,8 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
                 unitString = spinnerStrings[i];
                 indexSpinnerChoseAnInt = i;
+                setIndexSpinnerChoseAnInt(i);
+                tempAnInt = i;
 
             }
 
@@ -107,6 +110,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
                 unitString = spinnerStrings[0];
                 indexSpinnerChoseAnInt = 0;
+                setIndexSpinnerChoseAnInt(0);
 
 
             }
@@ -122,14 +126,29 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
     }   // main method
 
+    public void setIndexSpinnerChoseAnInt(int indexSpinnerChoseAnInt) {
+        this.indexSpinnerChoseAnInt = indexSpinnerChoseAnInt;
+        Log.d("4decV1", "from setter indexSpinner ==> " + indexSpinnerChoseAnInt);
+    }
+
     private double[] myTempCalculate() {
 
         double[] result = new double[2];
 
         try {
 
-            result[0] = 1;
-            result[1] = ((9 / 5) * Double.parseDouble(editText.getText().toString())) + 32;
+            Log.d("4decV1", "tempAnInt ==> " + tempAnInt);
+            switch (tempAnInt) {
+                case 0:
+                    result[0] = 1;
+                    result[1] = ((9 / 5) * Double.parseDouble(editText.getText().toString())) + 32;
+                    break;
+                case 1:
+                    result[0] = (Double.parseDouble(editText.getText().toString()) - 32) * (5 / 9);
+                    result[1] = 1;
+                    break;
+            }
+
 
         } catch (Exception e) {
             result = myConstant.getTempDoubles();
@@ -151,15 +170,26 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
 
             rowMatADouble = Double.parseDouble(s);
             Log.d("4decV1", "rowMat ==> " + rowMatADouble + " " + unitString);
-
+            Log.d("4decV1", "tempAnint เมื่อคลิก ==> " + tempAnInt);
 
 
             //Create Spinner
             if (indexAnInt == 1) {
                 //Temp
                 valueDoubles = new double[2];
-                valueDoubles[0] =  rowMatADouble;
-                valueDoubles[1] = ((1.8) * rowMatADouble) + 32;
+
+                switch (tempAnInt) {
+                    case 0:
+                        valueDoubles[0] =  rowMatADouble;
+                        valueDoubles[1] = ((1.8) * rowMatADouble) + 32;
+                        break;
+                    case 1:
+                        valueDoubles[0] = (rowMatADouble - 32) * 5.0 / 9.0;
+                        valueDoubles[1] = rowMatADouble;
+                        break;
+                }
+
+
             } else {
 
                 baseADouble = rowMatADouble / factorDoubles[indexSpinnerChoseAnInt];
