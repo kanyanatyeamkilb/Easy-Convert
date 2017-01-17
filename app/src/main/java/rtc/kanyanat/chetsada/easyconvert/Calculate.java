@@ -155,6 +155,7 @@ public class Calculate extends AppCompatActivity implements View.OnClickListener
         }
 
         return result;
+
     }
 
     @Override
